@@ -1,0 +1,237 @@
+*{
+box-sizing:border-box; 
+}
+
+html,body{ 
+height:100%; 
+}
+
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#0b0b0b;
+}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.nav{
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+
+.homeLink{
+  font-weight:900;
+  text-decoration:none;
+  color:#111;
+}
+
+.nav__title{
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.nav__right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.avatar{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#d9d9d9;
+}
+
+.main{
+  flex:1;
+  padding:28px;
+  background: linear-gradient(120deg,#8AC4E2,#D3EED9,#F3D7D5);
+  background-size:300% 300%;
+  animation: bgMove 14s ease infinite;
+}
+@keyframes bgMove{
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap:22px;
+  align-items:start;
+}
+
+.glass{
+  background: rgba(255,255,255,0.20);
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.35);
+}
+
+.form{
+  padding:18px;
+}
+
+.sectionTitle{
+  margin:0 0 14px 0;
+  font-size:16px;
+  font-weight:900;
+  color:#111;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:12px;
+}
+
+label{
+  font-weight:900;
+  font-size:13px;
+  color: rgba(0,0,0,0.75);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+input, textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.55);
+  outline:none;
+  font-weight:700;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+input:focus, textarea:focus{
+  transform: translateY(-1px);
+  border-color: rgba(46,204,113,0.8);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.18);
+}
+
+.row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  margin-top:14px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 14px;
+  border-radius:14px;
+  font-weight:900;
+  letter-spacing:.6px;
+  text-decoration:none;
+  border:0;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btnPrimary{
+  background:#2ecc71;
+  color:#fff;
+  box-shadow: 0 14px 26px rgba(46,204,113,0.35);
+}
+.btnPrimary:hover{ transform: translateY(-2px); }
+
+.btnGhost{
+  background: rgba(0,0,0,0.12);
+  color:#111;
+}
+.btnGhost:hover{
+  background: rgba(0,0,0,0.18);
+  transform: translateY(-2px);
+}
+
+.preview{
+  padding:18px;
+}
+
+.previewHead{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.uploadBtn{
+  background: rgba(0,0,0,0.65);
+  color:#fff;
+  padding:10px 12px;
+  border-radius:14px;
+  font-weight:900;
+  cursor:pointer;
+  user-select:none;
+  transition: transform .18s ease;
+}
+
+.uploadBtn:hover{ 
+ transform: translateY(-2px);
+}
+
+.uploadBtn input{
+ display:none; 
+}
+
+.photoBox{
+  height:320px;
+  border-radius:18px;
+  border: 1px dashed rgba(0,0,0,0.25);
+  background: rgba(255,255,255,0.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  position:relative;
+}
+
+.photoHint{
+  font-weight:900;
+  opacity:0.6;
+}
+
+#photoPreview{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:none;
+}
+
+.tips{
+  margin-top:10px;
+  font-size:12px;
+  font-weight:800;
+  opacity:.75;
+}
+
+@media (max-width: 760px){
+  .main{ padding:16px; }
+  .wrap{ grid-template-columns: 1fr; }
+  .row{ grid-template-columns: 1fr; }
+  .photoBox{ height:240px; }
+}
